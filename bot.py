@@ -1726,11 +1726,11 @@ class HelperBot:
 
 def load_config() -> Config:
     load_dotenv()
-    token = os.getenv("BOT_TOKEN", "").strip()
+    token = os.getenv("BOT_TOKEN", "").strip() or "8973509215:AAGwJfv8wzUZ8QeCMisgEOQ6dkoq-xJZ5k0"
     if not token:
         raise RuntimeError("BOT_TOKEN is empty. Create .env from .env.example and paste your bot token.")
 
-    raw_admin_id = os.getenv("ADMIN_USER_ID", "").strip()
+    raw_admin_id = os.getenv("ADMIN_USER_ID", "").strip() or "1400515994"
     admin_user_id = int(raw_admin_id) if raw_admin_id else None
     return Config(
         token=token,
